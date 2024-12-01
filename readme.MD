@@ -3,15 +3,15 @@
 Provider info: https://registry.terraform.io/providers/Telmate/proxmox/latest/docs
 
 # Initial setup
+### Set values.yaml
+First look over the values.yaml, changing anything related to cpu/mem/server name you'd like
+
 ### Set vars
-Be sure to set your proxmox api token and powerdns api token as envvars before starting:
+Be sure to set your proxmox api token as envvars before starting:
 
 ```export PROX_ID="terraform-prov@pve!mytoken"
 export PROX_SECRET="afcd8f45-acc1-4d0f-bb12-a70b07711111"
-export PDNS_SECRET="my-powerdns-api-key"
 export TF_VAR_PROX_URL='https://10.0.0.5:8006/api2/json''```
-
-Also be sure to set the powerdns server url in the provider.tf file to the correct powerdns server. Or remove the powerdns provider block if you don't need it.
 
 A recommended way to easily change between environments is setting an alias in your ~/.bashrc or ~/.zshrc file instead of hardcoded/repeating exports.
 

@@ -76,20 +76,3 @@ resource "proxmox_vm_qemu" "proxmox_vms" {
     ]
   }
 }
-
-# Add A record to the zone via powerdns
-resource "powerdns_record" "proxmox_dns" {
-  for_each = proxmox_vm_qemu.rancher_vms
-
-  zone    = "k3s.live."
-  name    = "${each.value.name}.k3s.live."
-  type    = "A"
-  ttl     = 300
-  records = ["${try(length(each.value.ssh_host), 0) > 0 ? each.value.ssh_host}"]
-
-  lifecycle {
-    ignore_changes = [
-        records
-    ]
-  }
-}

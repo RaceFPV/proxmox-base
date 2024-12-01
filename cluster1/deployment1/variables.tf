@@ -1,15 +1,11 @@
-variable "PROX_ID_STAGING" {
+variable "PROX_ID" {
   type = string
 }
 
-variable "PROX_SECRET_STAGING" {
+variable "PROX_SECRET" {
   type = string
 }
 
-variable "PDNS_SECRET" {
-  type = string
-}
-
-variable "PROX_URL_STAGING" {
+variable "PROX_URL" {
   type = string
 }
