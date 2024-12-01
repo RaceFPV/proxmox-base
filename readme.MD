@@ -15,6 +15,15 @@ Also be sure to set the powerdns server url in the provider.tf file to the corre
 
 A recommended way to easily change between environments is setting an alias in your ~/.bashrc or ~/.zshrc file instead of hardcoded/repeating exports.
 
+### Create a proxmox vm template
+This code assumes you have a proxmox vm template already created and that it's named `docker-template`. It also assumes the template is ubuntu and has the following:
+- a user named 'ubuntu'
+- qemu-guest-agent installed
+- a bridge named `vmbr1` that is connected to the proxmox server's physical network interface (this can be changed in main.tf)
+- a vlan tag of `11` on the bridge (this can be changed in main.tf)
+- a copy of the ssh private key to access the vm located in '~/.ssh/proxmox_nodes'
+- a storage backend named 'ceph' (change in main.tf if you use a different storage backend)
+
 
 # How to use
 ### Change directory
