@@ -1,0 +1,12 @@
+version: 3
+autodiscover:
+  mode: auto
+projects:
+- name: cluster1-vms
+  branch: /master/
+  dir: cluster1/deployment1
+  workspace: default
+  terraform_version: 1.3.9
+  autoplan:
+    when_modified: ["*.tf", "../modules/**/*.tf", ".terraform.lock.hcl", "values.yaml"]
+    enabled: true

@@ -1,0 +1,18 @@
+ssh_private_key: "~/.ssh/proxmox_nodes" # path to your ssh private key for proxmox nodes
+proxmox_vms:
+    vm01:
+        hostname: "vm01"
+        target_node: "proxmox-server-1" # name of one of the proxmox servers in your cluster
+        cpu_type: "max"
+        cpu_cores: 2
+        cpu_sockets: 1
+        memory: "8096"
+        vm_template: "docker-template" # name of your vm template
+    vm02:
+        hostname: "vm02"
+        target_node: "proxmox-server-1" # name of one of the proxmox servers in your cluster
+        cpu_type: "max"
+        cpu_cores: 2
+        cpu_sockets: 1
+        memory: "8096"
+        vm_template: "docker-template" # name of your vm template
