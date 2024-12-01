@@ -9,9 +9,11 @@ First look over the values.yaml, changing anything related to cpu/mem/server nam
 ### Set vars
 Be sure to set your proxmox api token as envvars before starting:
 
-```export PROX_ID="terraform-prov@pve!mytoken"
+```
+export PROX_ID="terraform-prov@pve!mytoken"
 export PROX_SECRET="afcd8f45-acc1-4d0f-bb12-a70b07711111"
-export TF_VAR_PROX_URL="https://10.0.0.5:8006/api2/json"```
+export TF_VAR_PROX_URL="https://10.0.0.5:8006/api2/json"
+```
 
 A recommended way to easily change between environments is setting an alias in your ~/.bashrc or ~/.zshrc file instead of hardcoded/repeating exports.
 
